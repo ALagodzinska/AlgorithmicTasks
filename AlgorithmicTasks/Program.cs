@@ -2,7 +2,7 @@
 
 Console.WriteLine("Make me roundly!");
 
-var logic = new Logic();
+var logic = new MakeMeRoundlyLogic();
 logic.Run();
 
 Console.ReadLine();

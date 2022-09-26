@@ -1,20 +1,39 @@
-﻿namespace MakeMeRoundly
-{
-    public class Logic
-    {
-        public void Run ()
-        {
-            var gradesFromFile = GetGradesFromFile();
+﻿using System.IO;
+using System.IO.Abstractions;
 
-            if (gradesFromFile.Length < 0 || gradesFromFile.Length > 60)
+namespace MakeMeRoundly
+{
+    public class MakeMeRoundlyLogic
+    {
+        private readonly IFileSystem _fileSystem;
+
+        public MakeMeRoundlyLogic() : this(new FileSystem()) { }
+
+        public MakeMeRoundlyLogic(IFileSystem fileSystem)
+        {
+            _fileSystem = fileSystem;
+        }
+
+        private static string folderName = "FileData";
+        private static string readFileName = "input.txt";
+        private static string writeFileName = "output.txt";
+
+        public readonly string readFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folderName, readFileName));
+        public readonly string writeFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folderName, writeFileName));
+
+        public void Run()
+        {
+            var gradesFromFile = GetGradesFromFile(readFilePath);
+
+            if (gradesFromFile == null || gradesFromFile.Length < 0 || gradesFromFile.Length > 60)
             {
-                Console.WriteLine("Grade count in invalid!");
+                Console.WriteLine("File data in invalid!");
                 return;
             }
 
             var roundedGrades = RoundGrades(gradesFromFile);
 
-            WriteGradesToFile(roundedGrades);
+            WriteGradesToFile(roundedGrades, writeFilePath);
 
             PrintGrades(roundedGrades);
         }
@@ -30,10 +49,14 @@
             }
         }
 
-        public int[] GetGradesFromFile()
+        public int[]? GetGradesFromFile(string filePath)
         {
-            var path = @"C:\Users\a.lagodzinska\source\repos\AlgorithmicTasks\input.txt";
-            var grades = File.ReadAllText(path);
+            if (!_fileSystem.File.Exists(filePath))
+            {
+                throw new FileNotFoundException(filePath);
+            }
+
+            var grades = _fileSystem.File.ReadAllText(filePath);
             string[] gradeArrayStrings = grades.Split(',')
                         .Select(x => x.Trim())
                         .Where(x => !string.IsNullOrWhiteSpace(x))
@@ -49,6 +72,8 @@
                 catch (Exception exception)
                 {
                     Console.WriteLine($"Grade is not in correct format. Exception message: {exception.Message}");
+
+                    return null;
                 }
             }
 
@@ -92,12 +117,11 @@
             }
         }
 
-        public void WriteGradesToFile(int[] roundedGrades)
+        public void WriteGradesToFile(int[] roundedGrades, string filePath)
         {
-            var path = @"C:\Users\a.lagodzinska\source\repos\AlgorithmicTasks\output.txt";
             string joinGradesString = string.Join(",", roundedGrades);
 
-            File.WriteAllText(path, joinGradesString);
+            _fileSystem.File.WriteAllText(filePath, joinGradesString);
         }
     }
 }

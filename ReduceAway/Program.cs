@@ -1,6 +1,6 @@
 ﻿using ReduceAway;
 
-var logic = new Logic();
+var logic = new ReduceAwayLogic();
 
 Console.WriteLine("Reduce Away!");
 var inputString = logic.GetValidInput();

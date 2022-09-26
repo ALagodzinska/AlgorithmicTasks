@@ -1,14 +1,22 @@
 ﻿using RemoveToTwo;
 
-var logic = new Logic();
+var logic = new RemoveToTwoLogic();
 
 Console.WriteLine("Remove To Two!");
 
 var userInput = logic.GetValidInput();
-var countOfLargestStringWithTwoLetterSequence = logic.LongestPossibleStringCount(userInput);
-Console.WriteLine(countOfLargestStringWithTwoLetterSequence);
-Console.ReadLine();
 
+if (!(userInput == ""))
+{
+    var countOfLargestStringWithTwoLetterSequence = logic.LongestPossibleStringCount(userInput);
+    Console.WriteLine(countOfLargestStringWithTwoLetterSequence);
+    Console.ReadLine();
+}
+else
+{
+    Console.WriteLine("You had too many tries!");
+    Console.WriteLine("Bye!");
+}
 
 
 

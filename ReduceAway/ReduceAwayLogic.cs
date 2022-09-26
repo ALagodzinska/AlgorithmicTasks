@@ -1,6 +1,6 @@
 ﻿namespace ReduceAway
 {
-    public class Logic
+    public class ReduceAwayLogic
     {
         public string SuperReducedString(string stringToReduce)
         {

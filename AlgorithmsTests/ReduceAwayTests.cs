@@ -6,10 +6,10 @@ namespace AlgorithmsTests
 {
     public class ReduceAwayTests
     {
-        private Logic _logic;
+        private ReduceAwayLogic _logic;
         public ReduceAwayTests()
         {
-            _logic = new Logic();
+            _logic = new ReduceAwayLogic();
         }
 
         [Fact]
@@ -97,6 +97,7 @@ namespace AlgorithmsTests
         [InlineData("", false)]
         [InlineData("a3df", false)]
         [InlineData("af df", false)]
+        //how to make a long string
         public void IsValidInput_Input_ReturnsExpected(string testValue, bool expectedResult)
         {
             Assert.Equal(_logic.IsValidInput(testValue), expectedResult);

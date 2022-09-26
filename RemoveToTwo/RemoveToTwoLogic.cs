@@ -1,22 +1,44 @@
 ﻿namespace RemoveToTwo
 {
-    public class Logic
+    public class RemoveToTwoLogic
     {
-        public string GetValidInput()
+        public string? GetValidInput()
         {
             Console.WriteLine("Please input one string of lowercase characters");
             string? input = Console.ReadLine();
-            while (input == null ||
-                input.Any(Char.IsWhiteSpace) ||
-                input.Any(char.IsDigit) ||
-                input.Length < 1 && input.Length > 100)
+            int tryCount = 1;
+
+            while (!IsValidInput(input))
             {
-                Console.WriteLine("String has invalid format.");
-                Console.WriteLine("Try one more time: ");
-                input = Console.ReadLine();
+                if (tryCount < 5)
+                {
+                    Console.WriteLine("String has invalid format.");
+                    Console.WriteLine("Try one more time: ");
+                    input = Console.ReadLine();
+                    tryCount++;
+                }
+                else
+                {
+                    return "";
+                }
             }
 
-            return input.ToLower();
+            return input?.ToLower();
+        }
+
+        public bool IsValidInput(string? input)
+        {
+            if (input == null ||
+                input.Any(Char.IsWhiteSpace) ||
+                input.Any(char.IsDigit) ||
+                input.Length < 1 || input.Length > 100)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public int LongestPossibleStringCount(string inputString)

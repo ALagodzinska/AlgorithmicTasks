@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="Moq" Version="4.18.2" />
+    <PackageReference Include="System.IO.Abstractions.TestingHelpers" Version="17.2.3" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -22,7 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AlgorithmicTasks\MakeMeRoundly.csproj" />
     <ProjectReference Include="..\ReduceAway\ReduceAway.csproj" />
+    <ProjectReference Include="..\RemoveToTwo\RemoveToTwo.csproj" />
   </ItemGroup>
 
 </Project>
