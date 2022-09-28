@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AlgorithmicTasks\MakeMeRoundly.csproj" />
+    <ProjectReference Include="..\LeaderBoard\LeaderBoard.csproj" />
     <ProjectReference Include="..\ReduceAway\ReduceAway.csproj" />
     <ProjectReference Include="..\RemoveToTwo\RemoveToTwo.csproj" />
   </ItemGroup>

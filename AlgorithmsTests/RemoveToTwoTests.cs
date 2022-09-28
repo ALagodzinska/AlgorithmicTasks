@@ -12,15 +12,15 @@
         }
 
         [Fact]
-        public void GetValidInput_InputStringIsValid_ReturnValidString()
+        public void GetValidInput_InputIsValid_ReturnValidString()
         {
-            var input = new StringReader("assdd");
+            var input = new StringReader("vsdd");
             Console.SetIn(input);
 
             var validInput = _logic.GetValidInput();
 
             Assert.NotNull(validInput);
-            Assert.Equal("assdd", validInput);
+            Assert.Equal("vsdd", validInput);
         }
 
         [Fact]
