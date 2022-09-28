@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoveToTwo", "RemoveToTwo\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AlgorithmsTests", "AlgorithmsTests\AlgorithmsTests.csproj", "{6CC004D3-F397-42BD-95CC-735FC2F23AE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeaderBoard", "LeaderBoard\LeaderBoard.csproj", "{558A7C35-20D4-4046-86FF-2C6DC93F5238}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeaderBoard", "LeaderBoard\LeaderBoard.csproj", "{558A7C35-20D4-4046-86FF-2C6DC93F5238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DivisibleSums", "DivisibleSums\DivisibleSums.csproj", "{84CB074E-A81A-4A67-8CF8-5A50DAF30243}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{558A7C35-20D4-4046-86FF-2C6DC93F5238}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{558A7C35-20D4-4046-86FF-2C6DC93F5238}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{558A7C35-20D4-4046-86FF-2C6DC93F5238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84CB074E-A81A-4A67-8CF8-5A50DAF30243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84CB074E-A81A-4A67-8CF8-5A50DAF30243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84CB074E-A81A-4A67-8CF8-5A50DAF30243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84CB074E-A81A-4A67-8CF8-5A50DAF30243}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
