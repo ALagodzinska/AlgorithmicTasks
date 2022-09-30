@@ -17,6 +17,83 @@
             Console.WriteLine(listOfValues.Count);
         }
 
+        public int? GetValidIntInput()
+        {
+            string? input = Console.ReadLine();
+            int tryCount = 1;
+            int intDevisor;
+
+            var devisor = int.TryParse(input, out intDevisor);
+
+            while (devisor == false || intDevisor <= 0)
+            {
+                if (tryCount < 5)
+                {
+                    Console.WriteLine("Devisor has invalid format.");
+                    Console.WriteLine("Try one more time: ");
+                    input = Console.ReadLine();
+                    devisor = int.TryParse(input, out intDevisor);
+                    tryCount++;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            return intDevisor;
+        }
+
+        public int[]? GetValidArrayInput()
+        {
+            string? input = Console.ReadLine();
+            int tryCount = 1;
+
+            var arrayOfScores = ParseToValidFormat(input);
+
+            while (arrayOfScores == null)
+            {
+                if (tryCount < 5)
+                {
+                    Console.WriteLine("Input has invalid format.");
+                    Console.WriteLine("Try one more time: ");
+                    input = Console.ReadLine();
+                    arrayOfScores = ParseToValidFormat(input);
+                    tryCount++;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+
+            return arrayOfScores;
+        }
+
+        public int[]? ParseToValidFormat(string? input)
+        {
+            if (input == null) { return null; }
+            var stringWithoutSpaces = String.Concat(input.Where(c => !Char.IsWhiteSpace(c)));
+            var stringScoreArray = stringWithoutSpaces.Split(',').ToArray<string>();
+
+            var intArray = new int[stringScoreArray.Length];
+
+            for (int i = 0; i < stringScoreArray.Length; i++)
+            {
+                int number;
+
+                bool isNumber = int.TryParse(stringScoreArray[i], out number);
+                if (!isNumber)
+                {
+                    return null;
+                }
+
+                intArray[i] = number;
+            }
+
+            return intArray;
+        }
+
         /// <summary>
         /// Return an array the same length as array with values. For each value in array counts it appearence in the int pair which sum is devisible evenly on devisor.
         /// </summary>
@@ -56,9 +133,13 @@
         /// <returns></returns>
         public List<int> GetUpdatedList(int[] arrayOfCounts, List<int> listOfValues)
         {
+            if(arrayOfCounts.Length != listOfValues.Count)
+            {
+                throw new Exception("Length of array and list doesnt match!");
+            }
 
             var indexOfValueToRemove = Array.IndexOf(arrayOfCounts, arrayOfCounts.Max());
-            listOfValues.RemoveAll(x => x == listOfValues[indexOfValueToRemove]);
+            listOfValues.RemoveAt(indexOfValueToRemove);
 
             return listOfValues;
         }

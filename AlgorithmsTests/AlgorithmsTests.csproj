@@ -25,7 +25,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AlgorithmicTasks\MakeMeRoundly.csproj" />
+    <ProjectReference Include="..\DivisibleSums\DivisibleSums.csproj" />
     <ProjectReference Include="..\LeaderBoard\LeaderBoard.csproj" />
+    <ProjectReference Include="..\MakeAlike\MakeAlike.csproj" />
     <ProjectReference Include="..\ReduceAway\ReduceAway.csproj" />
     <ProjectReference Include="..\RemoveToTwo\RemoveToTwo.csproj" />
   </ItemGroup>
