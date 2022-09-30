@@ -52,7 +52,7 @@ namespace AlgorithmsTests
             Console.SetIn(input);
 
             var validInput = _logic.GetValidArrayInput();
-
+            Console.In.Close();
             Assert.NotNull(validInput);
             Assert.Equal(new int[] { 12, 23 }, validInput);
         }
