@@ -29,6 +29,7 @@
     <ProjectReference Include="..\LeaderBoard\LeaderBoard.csproj" />
     <ProjectReference Include="..\MakeAlike\MakeAlike.csproj" />
     <ProjectReference Include="..\MinimumLoss\MinimumLoss.csproj" />
+    <ProjectReference Include="..\QueensAttack\QueensAttack.csproj" />
     <ProjectReference Include="..\ReduceAway\ReduceAway.csproj" />
     <ProjectReference Include="..\RemoveToTwo\RemoveToTwo.csproj" />
   </ItemGroup>
