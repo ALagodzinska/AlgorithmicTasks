@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueensAttack", "QueensAttac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FraudProtection", "FraudProtection\FraudProtection.csproj", "{F3D3EA8E-99E7-45C5-AC3C-757ABE0BF457}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rotations", "Rotations\Rotations.csproj", "{89C9229E-0AE6-49FF-8B31-D3FE61BE0AEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{F3D3EA8E-99E7-45C5-AC3C-757ABE0BF457}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3D3EA8E-99E7-45C5-AC3C-757ABE0BF457}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3D3EA8E-99E7-45C5-AC3C-757ABE0BF457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89C9229E-0AE6-49FF-8B31-D3FE61BE0AEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89C9229E-0AE6-49FF-8B31-D3FE61BE0AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89C9229E-0AE6-49FF-8B31-D3FE61BE0AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89C9229E-0AE6-49FF-8B31-D3FE61BE0AEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
