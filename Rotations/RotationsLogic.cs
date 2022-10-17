@@ -9,33 +9,42 @@ namespace Rotations
             const int rows = 4;
             const int columns = 4;
             var rotations = 2;
-            var matrix = new int[rows, columns] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
-            var matrix2 = new int[5, 7] { { 1, 2, 3, 4, 5, 6, 7 }, { 8, 9, 10, 11, 12, 13, 14 }, { 15, 16, 17, 18, 19, 20, 21 }, { 22, 23, 24, 25, 26, 27, 28 }, { 29, 30, 31, 32, 33, 34, 35 } };
+            //var matrix = new int[rows, columns] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 16 } };
+            var matrix = new int[5, 7] { { 1, 2, 3, 4, 5, 6, 7 }, { 8, 9, 10, 11, 12, 13, 14 }, { 15, 16, 17, 18, 19, 20, 21 }, { 22, 23, 24, 25, 26, 27, 28 }, { 29, 30, 31, 32, 33, 34, 35 } };
 
             var fullCircles = Math.Min(rows/2, columns/2);
-            var NEWmatrix = RotateOnce(matrix2, fullCircles);
-            //if both are not even
-            //if(rows%2 != 0 && columns%2 != 0)
 
-
-            for (int i = 0; i < matrix2.GetLength(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix2.GetLength(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    Console.Write(matrix2[i, j] + "\t");
+                    Console.Write(matrix[i, j] + "\t");
                 }
                 Console.WriteLine("\n");
             }
             Console.WriteLine();
 
-            for (int i = 0; i < NEWmatrix.GetLength(0); i++)
+            int rotationCount = 0;
+            while (rotationCount < rotations)
             {
-                for (int j = 0; j < NEWmatrix.GetLength(1); j++)
+                matrix = RotateOnce(matrix, fullCircles);
+                rotationCount++;
+
+                for (int i = 0; i < matrix.GetLength(0); i++)
                 {
-                    Console.Write(NEWmatrix[i, j] + "\t");
+                    for (int j = 0; j < matrix.GetLength(1); j++)
+                    {
+                        Console.Write(matrix[i, j] + "\t");
+                    }
+                    Console.WriteLine("\n");
                 }
-                Console.WriteLine("\n");
+                Console.WriteLine();
             }
+            
+            //if both are not even
+            //if(rows%2 != 0 && columns%2 != 0)        
+
+            
         }
 
         public int[,] RotateOnce(int[,] matrix, int fullCircles)

@@ -1,4 +1,5 @@
 ﻿using Rotations;
+using System.Diagnostics;
 
 Console.WriteLine("Rotations!");
 
